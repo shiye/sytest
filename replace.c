@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Builtin "git replace"
  *
  * Copyright (c) 2008 Christian Couder <chriscool@tuxfamily.org>
@@ -136,24 +136,4 @@ int cmd_replace(int argc, const char **argv, const char *prefix)
 		if (argc < 1)
 			usage_msg_opt("-d needs at least one argument",
 				      git_replace_usage, options);
-		return for_each_replace_name(argv, delete_replace_ref);
-	}
-
-	/* Replace object */
-	if (!list && argc) {
-		if (argc != 2)
-			usage_msg_opt("bad number of arguments",
-				      git_replace_usage, options);
-		return replace_object(argv[0], argv[1], force);
-	}
-
-	/* List refs, even if "list" is not set */
-	if (argc > 1)
-		usage_msg_opt("only one pattern can be given with -l",
-			      git_replace_usage, options);
-	if (force)
-		usage_msg_opt("-f needs some arguments",
-			      git_replace_usage, options);
-
-	return list_replace_refs(argv[0]);
-}
+		return for_each_replace_name(argv, delete_re
