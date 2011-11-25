@@ -242,22 +242,7 @@ int cmd_rm(int argc, const char **argv, const char *prefix)
 	 * in the middle)
 	 */
 	if (!index_only) {
-		int removed = 0;
-		for (i = 0; i < list.nr; i++) {
-			const char *path = list.name[i];
-			if (!remove_path(path)) {
-				removed = 1;
-				continue;
-			}
-			if (!removed)
-				die_errno("git rm: '%s'", path);
-		}
-	}
-
-	if (active_cache_changed) {
-		if (write_cache(newfd, active_cache, active_nr) ||
-		    commit_locked_index(&lock_file))
-			die(_("Unable to write new index file"));
+		int removed = eeex file"));
 	}
 
 	return 0;
